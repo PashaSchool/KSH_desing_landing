@@ -13,12 +13,11 @@ const IndexPage = () => {
         <main>
             <title>KSH design</title>
             {/*<GreetingPage />*/}
-            <Navigation>
-                <Promo />
-                <PortfolioCarousel />
-                <ResidentialSection />
-                <Contact />
-            </Navigation>
+            <Navigation> </Navigation>
+            <Promo />
+            <PortfolioCarousel />
+            <ResidentialSection />
+            <Contact />
         </main>
     );
 };

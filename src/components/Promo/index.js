@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import Rectangle from '../sherable/Rectangle';
 
-export default function Promo(props) {
+export default function Promo({children}) {
     const containerRef = useRef();
     const [isLandingLoaded, setLandingLoaded] = useState(false);
 
@@ -18,7 +18,7 @@ export default function Promo(props) {
     }, []);
 
     return (
-        <div className={'window-section'}>
+        <div className={'window-section relative'}>
             <CSSTransition in={isLandingLoaded} timeout={15000} classNames={'promo-section-active'}>
                 <div className="promo-section__overflow-wrapper relative">
                     <div className="promo-section__background-image relative">
@@ -56,6 +56,7 @@ export default function Promo(props) {
                     </div>
                 </div>
             </CSSTransition>
+
         </div>
     );
 }
