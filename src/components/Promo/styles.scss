@@ -1,0 +1,431 @@
+.promotion-section-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.noise-background-css {
+    background-image: url('../../assets/images/common/noisy-promo.png');
+}
+
+.background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../assets/images/common/promo.jpg');
+}
+
+.background-image-promo-logo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../assets/images/logo/logo.png');
+}
+
+.relative {
+    position: relative;
+}
+
+$timingFunction: cubic-bezier(0.91, 0.04, 0.45, 0.83);
+@mixin animateOverlay($name: slideUp, $delay: 1s) {
+    border-bottom-right-radius: 55%;
+    transform: translateY(50%);
+    width: 200vw;
+    height: 200vh;
+
+    animation: {
+        name: $name;
+        duration: 1.2s;
+        delay: $delay;
+        fill-mode: forwards;
+        timing-function: $timingFunction;
+    }
+}
+
+.promo-section {
+    width: 100%;
+    height: 100%;
+
+    transform: scale(1.1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../assets/images/common/promo.jpg');
+
+    animation: {
+        name: zoomIn;
+        duration: 1s;
+        timing-function: $timingFunction;
+        delay: 1.6s;
+        fill-mode: forwards;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.noise-background {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/images/common/noisy-promo.png');
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.title {
+    color: #ffffff;
+    font-size: 13vw;
+}
+
+.block {
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-top {
+    color: #ffffff;
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+
+    z-index: 100;
+}
+
+.left-bottom {
+    position: fixed;
+    left: 3rem;
+    bottom: 3rem;
+
+    color: #ffffff;
+}
+
+.menu {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    position: fixed;
+    color: #ffffff;
+
+    z-index: 100;
+
+    top: 3rem;
+    right: 3rem;
+
+    display: flex;
+
+    &-item {
+        margin-right: 3rem;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.see-all {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+
+    z-index: 20;
+
+    color: #ffffff;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--dark {
+        color: rgb(95, 90, 87);
+    }
+}
+//ANIMATED BLOCK
+$clipPathTransition: 1.2s;
+
+$delayAnimationLogo: 1s;
+
+$bgImageDuration: 1.2s;
+$bgImageDelay: 1.5s;
+
+.window-section {
+    width: 100%;
+    height: 100vh;
+}
+
+.window-clip-path-section__ellipse {
+    clip-path: ellipse(100% 100% at 15% 50%);
+    width: 200%;
+    height: 200vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.window-clip-path-section__ellipse-animation {
+    animation: {
+        name: ellipseShowPagesAnimation;
+        duration: $clipPathTransition;
+        timing-function: $timingFunction;
+        play-state: paused;
+        fill-mode: forwards;
+    }
+}
+@keyframes ellipseShowPagesAnimation {
+    from {
+        clip-path: ellipse(100% 100% at 15% 50%);
+    }
+    to {
+        clip-path: ellipse(100% 0% at 15% 50%);
+    }
+}
+
+.promo-section {
+    &__background-image {
+        @extend .window-section;
+        @extend .background-image;
+
+        &__initial-ellipse {
+            @extend .window-clip-path-section__ellipse;
+
+            animation: {
+                name: ellipseShowPagesAnimation;
+                play-state: paused;
+                duration: $clipPathTransition;
+                timing-function: $timingFunction;
+                fill-mode: forwards;
+            }
+
+            &:after {
+                content: '';
+                width: 50%;
+                height: 50%;
+                display: block;
+                position: absolute;
+                z-index: 5;
+                right: 0;
+                bottom: 0;
+                @extend .background-image;
+                transform: scale(1.2);
+
+                animation: {
+                    name: zoomInBackground;
+                    play-state: paused;
+                    duration: $bgImageDuration;
+                    timing-function: $timingFunction;
+                    fill-mode: forwards;
+                }
+            }
+        }
+
+        &--rectangle {
+            clip-path: inset(10% 35% 10% 35%);
+            position: absolute;
+            z-index: 3;
+            @extend .background-image;
+            @extend .window-section;
+        }
+    }
+    &__overflow-wrapper {
+        @extend .window-section;
+        overflow: hidden;
+    }
+    &__noise-background {
+        @extend .noise-background;
+    }
+}
+
+@keyframes zoomInBackground {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.promo-section__initial-logo-screen {
+    @extend .window-clip-path-section__ellipse;
+    @extend .window-clip-path-section__ellipse-animation;
+
+    &:after {
+        content: '';
+        width: 50%;
+        height: 50%;
+        display: block;
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        @extend .background-image-promo-logo;
+    }
+}
+
+.promo-section-text-information {
+    @extend .window-section;
+    padding: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.promo-section-logo-text {
+    font-size: 10vw;
+    color: #ffffff;
+}
+
+.clip-box {
+    clip-path: ellipse(100% 100% at 15% 50%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: clip-path 1.2s $timingFunction;
+    height: 200vh;
+    width: 200%;
+
+    &:after {
+        content: '';
+        width: 50%;
+        height: 50%;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        @extend .background-image;
+    }
+}
+
+.promo-section-initial-overlay--secondary {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    background-color: #fff;
+
+    clip-path: ellipse(100% 100% at 15% 50%);
+    transition: clip-path 1.2s $timingFunction;
+    height: 200vh;
+    width: 200%;
+}
+
+.container-wrapper:hover .clip-box {
+    transition-delay: 1.2s;
+    clip-path: ellipse(100% 0% at 15% 50%);
+}
+
+.container-wrapper:hover .promo-section-initial-overlay--secondary {
+    clip-path: ellipse(100% 0% at 15% 50%);
+}
+
+.noise-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    @extend .noise-background-css;
+}
+
+.animated-text-block--slide-up {
+    overflow: hidden;
+
+    & > h1,
+    & > p,
+    & > a {
+        display: block;
+        //line-height: 1.2;
+        transform: translateY(120%);
+
+        animation: {
+            name: textSlideUp;
+            timing-function: $timingFunction;
+            fill-mode: forwards;
+            duration: 1.2s;
+            play-state: paused;
+        }
+    }
+}
+
+@keyframes textSlideUp {
+    from {
+        transform: translateY(120%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+// Animation starts here
+.promo-section-active {
+    &-enter-active {
+        .promo-section__initial-logo-screen {
+            animation-delay: $delayAnimationLogo;
+            animation-play-state: running;
+        }
+
+        .promo-section__background-image__initial-ellipse {
+            animation-delay: 2.2s;
+            animation-play-state: running;
+
+            &:after {
+                animation-delay: 1.8s;
+                animation-play-state: running;
+            }
+        }
+
+        .animated-text-block--slide-up > h1,
+        .animated-text-block--slide-up > p,
+        .animated-text-block--slide-up > a {
+            animation-delay: 2.2s;
+            animation-play-state: running;
+        }
+    }
+}
