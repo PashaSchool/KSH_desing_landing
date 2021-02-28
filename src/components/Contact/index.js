@@ -34,11 +34,17 @@ export default function Contact() {
             }} className={'relative z-10 font-light leading-10 text-white-darken flex justify-between p-8 text-2xl'}>
                 <div className={'flex'}>
                     <p className={'mr-28'}>KSh DESIGN</p>
-                    <p>Instagram</p>
+                    <p>
+                        <a href="https://instagram.com" target={'_blank'}>Instagram</a>
+                    </p>
                 </div>
                 <div className={'flex'}>
-                    <p className={'mr-10'}>Tel: +380660177097</p>
-                    <p className={''}>kshofficedesign@gmail.com</p>
+                    <p className={'mr-10'}>
+                        <a href="tel:+380660177097">Tel: +380660177097</a>
+                    </p>
+                    <p className={''}>
+                        <a href="mailto:kshofficedesign@gmail.com">kshofficedesign@gmail.com</a>
+                    </p>
                 </div>
             </footer>
 

@@ -74,12 +74,14 @@ export default function PortfolioCarousel() {
             <div className={'grid'}
                 style={{
                     height: '15vh',
+                    padding: '4vh 5rem'
                 }}
             >
                 <div
-                    className={'text-black flex justify-between items-center px-4'}
+                    className={'text-black flex justify-between items-center px-4 text-2xl'}
                     style={{
                         color: '#eae6dc',
+
                     }}
                 >
                     <div>
