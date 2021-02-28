@@ -249,7 +249,7 @@ $bgImageDelay: 1.5s;
         }
 
         &--rectangle {
-            clip-path: inset(10% 35% 10% 35%);
+            clip-path: inset(15% 36% 15% 35%);
             position: absolute;
             z-index: 3;
             @extend .background-image;

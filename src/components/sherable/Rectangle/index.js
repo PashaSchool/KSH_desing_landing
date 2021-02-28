@@ -24,7 +24,7 @@ export default function Rectangle({ imgUrl, containerRef, className='' }) {
         <div
             className={`w-full h-full bg-cover bg-no-repeat bg-center ${className}`}
             style={{
-                'clip-path': 'inset(10% 35% 10% 35%)',
+                'clip-path': 'inset(17% 36% 17% 36%)',
                 clip: `rect(${size})`,
                 backgroundImage: `url(${imgUrl})`,
             }}

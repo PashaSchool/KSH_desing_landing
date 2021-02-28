@@ -28,25 +28,27 @@ export default function Promo({children}) {
 
                         <div className="promo-section-text-information">
 
-                            <div className="promo-section-text-information__header  font-light uppercase text-white ">
+                            <div className="promo-section-text-information__header  font-light uppercase text-white text-2xl">
                                 <div className="animated-text-block--slide-up">
-                                    <p className={'text-sz-normal text-w-regular leading-10'}>Interior Design</p>
+                                    <p className={'text-w-regular leading-10'}>Interior Design</p>
                                 </div>
 
                                 <div className="animated-text-block--slide-up">
-                                    <p className={'text-sz-normal text-w-regular leading-10'}>Architecture</p>
+                                    <p className={'text-w-regular leading-10'}>Architecture</p>
                                 </div>
                             </div>
 
                             <div className="promo-section-text-information__body">
                                 <div className="animated-text-block--slide-up">
-                                    <h1 className={'promo-section-logo-text font-light'}>KSh DESIGN</h1>
+                                    <h1 className={'promo-section-logo-text font-light'} style={{
+                                        textIndent: '5.5vw'
+                                    }}>KSh DESIGN</h1>
                                 </div>
                             </div>
 
                             <div className="promo-section-text-information__footer">
                                 <div className="animated-text-block--slide-up">
-                                    <p className={'text-sz-normal font-light leading-10 text-white uppercase'}>Ukraine</p>
+                                    <p className={'text-2xl font-light leading-10 text-white uppercase'}>Ukraine</p>
                                 </div>
                             </div>
                         </div>

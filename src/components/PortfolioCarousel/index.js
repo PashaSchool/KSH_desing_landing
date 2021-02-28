@@ -11,13 +11,17 @@ function ImageHolder({ src }) {
         <div
             className={'flex justify-start'}
             style={{
-                width: '45%',
+                // width: '45%',
+                width: '50vw',
                 height: '100%',
+                margin: '0 5vw'
+                // padding: '0 1vw'
             }}
         >
             <div
-                className={'w-1/2 h-full bg-center bg-cover bg-no-repeat'}
-                style={{ backgroundImage: `url(${src})` }}
+                className={'h-full bg-center bg-cover bg-no-repeat'}
+                style={{ backgroundImage: `url(${src})`, width: '28vw' }}
+                // style={{ backgroundImage: `url(${src})`, width: '80%' }}
             />
         </div>
     );
@@ -33,18 +37,32 @@ export default function PortfolioCarousel() {
         >
             <div className="absolute left-0 right-0 bottom-0 top-0 whitespace-nowrap flex items-center justify-center z-10">
                 <p
-                    className={'font-light'}
-                    style={{ fontSize: '9vw', color: '#eae6dc', transform: 'translateX(-10vw)' }}
+                    className={'font-light '}
+                    style={{
+                        fontSize: '8vw',
+                        color: '#eae6dc',
+                        transform: 'translateX(-7vw)',
+                        paddingTop: '6vh',
+                        'word-spacing': '10vw',
+                    }}
                 >
                     COMMERCIAL INTERIORS
                 </p>
             </div>
 
-            <div className="absolute left-0 right-0 bottom-12 top-12 py-12">
+            <div
+                style={{
+                    height: '15vh',
+                }}
+            />
+
+            <div className="">
                 <div
                     className="w-full h-full flex"
                     style={{
-                        width: '135%',
+                        width: '150vw',
+                        height: '70vh',
+                        transform: 'translateX(-18vw)'
                     }}
                 >
                     <ImageHolder src={image1} />
@@ -53,17 +71,23 @@ export default function PortfolioCarousel() {
                 </div>
             </div>
 
-            <div
-                className={'absolute left-8 bottom-8 right-8 text-black flex justify-between'}
+            <div className={'grid'}
                 style={{
-                    color: '#eae6dc',
+                    height: '15vh',
                 }}
             >
-                <div>
-                    <p>KSh DESIGN</p>
-                </div>
-                <div>
-                    <p>SEE ALL</p>
+                <div
+                    className={'text-black flex justify-between items-center px-4'}
+                    style={{
+                        color: '#eae6dc',
+                    }}
+                >
+                    <div>
+                        <p>KSh DESIGN</p>
+                    </div>
+                    <div>
+                        <p>SEE ALL</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,6 +7,9 @@ module.exports = {
         'black-300' : "#5f5d5c",
         'white-darken' : "rgba(190,190,190, .7)"
       },
+      margin: {
+        '18': '4.375rem',
+      },
       fontFamily: {
         sans: ['"Beausite"', 'sans-serif']
       }
