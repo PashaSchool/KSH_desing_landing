@@ -81,7 +81,7 @@ export default function PortfolioCarousel() {
                     className={'text-black flex justify-between items-center px-4 text-2xl'}
                     style={{
                         color: '#eae6dc',
-
+                    fontSize: '2vh'
                     }}
                 >
                     <div>

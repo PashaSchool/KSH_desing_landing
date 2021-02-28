@@ -8,15 +8,16 @@ export default function Navigation({ children }) {
                     className={'flex menu-item '}
                     style={{
                         textShadow: '0 0 1px #000',
+                        fontSize:'2.4vh'
                     }}
                 >
-                    <li className={'ml-14'}>
+                    <li className={'ml-12'}>
                         <a href="/">Projects</a>
                     </li>
-                    <li className={'ml-14'}>
+                    <li className={'ml-12'}>
                         <a href="/">INFORMATION</a>
                     </li>
-                    <li className={'ml-14'}>
+                    <li className={'ml-12'}>
                         <a href="/">Contact</a>
                     </li>
                 </ul>

@@ -31,7 +31,9 @@ export default function Contact() {
             <footer  style={{
                 height: '15vh',
                 padding: '4vh 5rem'
-            }} className={'relative z-10 font-light leading-10 text-white-darken flex justify-between p-8 text-2xl'}>
+            }} className={'relative z-10 font-light leading-10 text-white-darken flex justify-between p-8 text-2xl'}  style={{
+                fontSize: '2vh'
+            }}>
                 <div className={'flex'}>
                     <p className={'mr-28'}>KSh DESIGN</p>
                     <p>

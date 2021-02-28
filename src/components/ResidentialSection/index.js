@@ -59,6 +59,7 @@ export default function ResidentialSection() {
                 className={'text-black flex justify-between text-2xl p-16'}
                 style={{
                     height: '15vh',
+                    fontSize: '2vh'
                 }}
             >
                 <div className={'text-black-300'}>
