@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'font.css';
+/*@import "locomotive-scroll.css";*/
+
+
+.promo-section__container {
+}
+
+.window-clip-path-section,
+.promo-section-greeting {
+    clip-path: ellipse(100% 100% at 15% 50%);
+    width: 200%;
+    height: 200vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.window-clip-path-section--animation,
+.promo-section-greeting {
+    animation-name: ellipseShowPagesAnimation;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.91, 0.04, 0.45, 0.83);
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ellipseShowPagesAnimation {
+    from {
+        clip-path: ellipse(100% 100% at 15% 50%);
+    }
+    to {
+        clip-path: ellipse(100% 0% at 15% 50%);
+    }
+}
+
+@keyframes zoomInBackground {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.promo-section__noise-bg {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.promo-section-greeting:after {
+    content: '';
+    width: 50%;
+    height: 50%;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    background-image: url('../images/logo/logo.png');
+}
+
+/* INITIAL el */
+
+.rectangle-wrapper {
+    position: absolute;
+    z-index: 3;
+}
+
+.promo-section__background-image {
+    z-index: 3;
+}
+
+.promo-section__background-image__initial-ellipse {
+    clip-path: ellipse(100% 100% at 15% 50%);
+    width: 200%;
+    height: 200vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    animation-name: ellipseShowPagesAnimation;
+    animation-play-state: paused;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.91, 0.04, 0.45, 0.83);
+    animation-fill-mode: forwards;
+
+}
+
+.promo-section__background-image__initial-ellipse:after {
+    content: "";
+    width: 50%;
+    height: 50%;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transform: scale(1.2);
+
+    animation-name: zoomInBackground;
+    animation-play-state: paused;
+    animation-duration: 1.2s;
+    animation-timing-function:cubic-bezier(0.91, 0.04, 0.45, 0.83) ;
+    animation-fill-mode: forwards;
+
+}
+/* ANIMATION */
+
+.promo-section-active-enter-active .promo-section-greeting {
+    animation-play-state: running;
+    animation-delay: 1s;
+}
+
+.promo-section-active-enter-active .promo-section__background-image__initial-ellipse {
+    animation-delay: 2.2s;
+    animation-play-state: running;
+}
+
+.promo-section-active-enter-active .promo-section__background-image__initial-ellipse:after {
+    animation-delay: 1.8s;
+    animation-play-state: running;
+}
+
+/*&:after {*/
+/*     animation-delay: 1.8s;*/
+/*     animation-play-state: running;*/
+/* }*/
+/*.promo-section-active {*/
+/*&-enter-active {*/
+/*.promo-section__initial-logo-screen {*/
+/*    animation-delay: $delayAnimationLogo;*/
+/*    animation-play-state: running;*/
+/*}*/
+
+/*.promo-section__background-image__initial-ellipse {*/
+/*    animation-delay: 2.2s;*/
+/*    animation-play-state: running;*/
+
+/*&:after {*/
+/*     animation-delay: 1.8s;*/
+/*     animation-play-state: running;*/
+/* }*/
+/*}*/
+
+/*.animated-text-block--slide-up > h1,*/
+/*.animated-text-block--slide-up > p,*/
+/*.animated-text-block--slide-up > a {*/
+/*    animation-delay: 2.2s;*/
+/*    animation-play-state: running;*/
+/*}*/
+/*}*/
+/*}*/
+
+
+
+
+
+
+/*///////*/
+
+.aspect-ratio-container {
+    background-color: lightblue;
+
+    padding-top: 100px;
+    border: 1px solid;
+}
+
+
+.menu-item li a:after {
+    content: '';
+    display: block;
+    color: black;
+    mix-blend-mode: difference;
+}

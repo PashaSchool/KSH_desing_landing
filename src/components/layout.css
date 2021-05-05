@@ -1,3 +1,4 @@
+@import "font.css";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -63,6 +64,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  font-family: inherit;
 }
 mark {
   background-color: #ff0;
@@ -185,9 +187,12 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em Beausite, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+}
+.ff {
+  font-family: Beausite, sans-serif;
 }
 * {
   box-sizing: inherit;
@@ -200,7 +205,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Beausite, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -645,4 +650,14 @@ html[data-direction="down"] .header {
 .Collapse_Content > div {
   padding-top: 20px;
   text-align: left;
+}
+
+
+.contact-us-bg-image {
+  transform: scale(1.1);
+  transition: transform 800ms cubic-bezier(0.91, 0.04, 0.45, 0.83);
+}
+
+.is-inview.contact-us-section .contact-us-bg-image {
+  transform: scale(1);
 }
