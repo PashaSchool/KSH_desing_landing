@@ -13,8 +13,8 @@ const Scroll = callbacks => {
       ...scroll.options,
     })
     locomotiveScroll.update()
-    // locomotiveScroll.stop()
-// console.dir({locomotiveScroll})
+    locomotiveScroll.stop()
+
     // Exposing to the global scope for ease of use.
     window.scroll = locomotiveScroll
 
@@ -22,11 +22,6 @@ const Scroll = callbacks => {
       // Update `data-direction` with scroll direction.
       document.documentElement.setAttribute("data-direction", func.direction)
     })
-
-    locomotiveScroll.on('call', function(t,e,n) {
-      console.log("arg", {t,e,n})
-    })
-
 
 
     return () => {

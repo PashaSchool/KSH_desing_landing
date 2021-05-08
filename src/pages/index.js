@@ -16,6 +16,7 @@ import Rectangle from '../sherable/Rectangle';
 
 import { CSSTransition } from 'react-transition-group';
 
+import ContactUs from '../components/ContactUs';
 import Marquee from '../components/marquee.js'
 
 function Navigation(props) {
@@ -143,6 +144,60 @@ function Promo({ children }) {
     );
 }
 
+const Footer = () => (
+    <footer
+        style={{
+            height: '15vh',
+            padding: '4vh 5rem',
+        }}
+        className={'relative z-10 font-light leading-10 text-white text-opacity-80 flex justify-between p-8 text-2xl'}
+        style={{
+            fontSize: '2vh',
+        }}
+    >
+        <div className={'flex'}>
+            <p className={'mr-28'}>KSh DESIGN</p>
+            <p>
+                <a href="https://instagram.com" target={'_blank'}>
+                    Instagram
+                </a>
+            </p>
+        </div>
+        <div className={'flex'}>
+            <p className={'mr-10'}>
+                <a href="tel:+380660177097">Tel: +380660177097</a>
+            </p>
+            <p className={''}>
+                <a href="mailto:kshofficedesign@gmail.com">kshofficedesign@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+);
+
+function Geeting() {
+  return (
+    <div
+      style={{
+        height: '70vh',
+      }}
+      className={'relative z-10 flex-grow flex items-center justify-center'}
+    >
+      <p
+        data-scroll
+        data-scroll-speed={'-1.8'}
+        className={'uppercase text-9xl font-light text-white'}
+        style={{
+          fontSize: '9vw',
+          marginTop: '5vh',
+          letterSpacing: '2px',
+        }}
+      >
+        CONTACT US
+      </p>
+    </div>
+  )
+}
+
 function Contact() {
     const containerRef = useRef();
     return (
@@ -158,72 +213,20 @@ function Contact() {
                 style={{
                     backgroundImage: `url(${bgImage})`,
                 }}
-            ></div>
+            />
             <div
                 className="absolute left-0 right-0 bottom-0 top-0 bg-cover bg-center "
                 style={{
                     backgroundImage: `url(${bgTransparent})`,
                 }}
             >
-                <div
-                    style={{
-                        height: '15vh',
-                    }}
-                ></div>
 
-                <div
-                    style={{
-                        height: '70vh',
-                    }}
-                    className={'relative z-10 flex-grow flex items-center justify-center'}
-                >
-                    <p
-                        data-scroll
-                        data-scroll-speed={'-1.8'}
-                        className={'uppercase text-9xl font-light text-white'}
-                        style={{
-                            fontSize: '9vw',
-                            marginTop: '5vh',
-                            letterSpacing: '2px',
-                        }}
-                    >
-                        CONTACT US
-                    </p>
-                </div>
+                {/*Greeting*/}
+                {/*/FOOTER COMPONENT*/}
 
-                <footer
-                    style={{
-                        height: '15vh',
-                        padding: '4vh 5rem',
-                    }}
-                    className={
-                        'relative z-10 font-light leading-10 text-white-darken flex justify-between p-8 text-2xl'
-                    }
-                    style={{
-                        fontSize: '2vh',
-                    }}
-                >
-                    <div className={'flex'}>
-                        <p className={'mr-28'}>KSh DESIGN</p>
-                        <p>
-                            <a href="https://instagram.com" target={'_blank'}>
-                                Instagram
-                            </a>
-                        </p>
-                    </div>
-                    <div className={'flex'}>
-                        <p className={'mr-10'}>
-                            <a href="tel:+380660177097">Tel: +380660177097</a>
-                        </p>
-                        <p className={''}>
-                            <a href="mailto:kshofficedesign@gmail.com">kshofficedesign@gmail.com</a>
-                        </p>
-                    </div>
-                </footer>
-
-                <div className="absolute left-0 right-0 bottom-0 top-0">
-                    <Rectangle imgUrl={bgImage} containerRef={containerRef.current} />
-                </div>
+                {/*<div className="absolute left-0 right-0 bottom-0 top-0">*/}
+                {/*    <Rectangle imgUrl={bgImage} containerRef={containerRef.current} />*/}
+                {/*</div>*/}
             </div>
         </div>
     );
@@ -284,10 +287,6 @@ function ResidentialSection(props) {
                         >
                             <div style={{ fontSize: '11vw' }}>
                                 <p
-                                    data-scroll
-                                    data-scroll-speed={'-0.4'}
-                                    data-scroll-direction={'horizontal'}
-                                    data-scroll-repeat
                                     style={{
                                         marginLeft: '36vw',
                                     }}
@@ -295,10 +294,7 @@ function ResidentialSection(props) {
                                     Private
                                 </p>
                                 <p
-                                    data-scroll
-                                    data-scroll-speed={'0.8'}
-                                    data-scroll-direction={'horizontal'}
-                                    data-scroll-repeat
+
                                     className={'-ml-10'}
                                     style={{
                                         marginLeft: '7vw',
@@ -307,10 +303,7 @@ function ResidentialSection(props) {
                                     Residential
                                 </p>
                                 <p
-                                    data-scroll
-                                    data-scroll-speed={'-1.2'}
-                                    data-scroll-direction={'horizontal'}
-                                    data-scroll-repeat
+
                                     style={{
                                         marginLeft: '43vw',
                                     }}
@@ -440,14 +433,18 @@ const IndexPage = () => (
         {/*</div>*/}
 
         <div id={'layout-container'} className={'relative z-10'}>
-            {/*<Promo>*/}
-            {/*    <Navigation />*/}
-            {/*</Promo>*/}
+            <Promo>
+                <Navigation />
+            </Promo>
 
-            {/*<PortfolioCarousel />*/}
-            {/*<ResidentialSection />*/}
+            <PortfolioCarousel />
+            <ResidentialSection />
 
-            <Contact />
+
+            <ContactUs
+              bgImageSource={bgImage}
+              bgNoiseImageSource={bgTransparent}
+            />
         </div>
     </Layout>
 );

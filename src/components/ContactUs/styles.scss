@@ -1,0 +1,31 @@
+// Initial animation styles
+.contact-us {
+    &__background-image,
+    &__clip-path-image {
+        transform: scale(1.1);
+        transition: transform 2500ms cubic-bezier(0.91, 0.04, 0.45, 0.83),
+            opacity 1700ms cubic-bezier(0.91, 0.04, 0.45, 0.83) 800ms;
+    }
+    &__noise-image {
+        opacity: 0;
+        transition: opacity 1700ms cubic-bezier(0.91, 0.04, 0.45, 0.83) 800ms;
+    }
+    &__clip-path-image {
+        opacity: 0;
+    }
+}
+
+// Animations start
+.is-inview.contact-us {
+    .contact-us__background-image,
+    .contact-us__clip-path-image {
+        transform: scale(1);
+    }
+
+    .contact-us__noise-image {
+        opacity: 1;
+    }
+    .contact-us__clip-path-image {
+        opacity: 1;
+    }
+}

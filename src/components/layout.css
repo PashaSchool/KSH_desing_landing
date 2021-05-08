@@ -652,12 +652,3 @@ html[data-direction="down"] .header {
   text-align: left;
 }
 
-
-.contact-us-bg-image {
-  transform: scale(1.1);
-  transition: transform 800ms cubic-bezier(0.91, 0.04, 0.45, 0.83);
-}
-
-.is-inview.contact-us-section .contact-us-bg-image {
-  transform: scale(1);
-}

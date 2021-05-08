@@ -4,7 +4,7 @@ export default function Rectangle({ imgUrl, containerRef, className = '' }) {
     const [size, setSize] = React.useState('0px, 0px, 0px, 0px');
 
     React.useEffect(() => {
-        if (window) {
+        if (typeof window !== 'undefined') {
             handleUpdateRect();
 
             window.addEventListener('resize', handleUpdateRect);
@@ -28,6 +28,6 @@ export default function Rectangle({ imgUrl, containerRef, className = '' }) {
                 clip: `rect(${size})`,
                 backgroundImage: `url(${imgUrl})`,
             }}
-        ></div>
+        />
     );
 }
