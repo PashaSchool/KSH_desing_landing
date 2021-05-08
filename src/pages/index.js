@@ -16,6 +16,8 @@ import Rectangle from '../sherable/Rectangle';
 
 import { CSSTransition } from 'react-transition-group';
 
+import Marquee from '../components/marquee.js'
+
 function Navigation(props) {
     return (
         <div data-scroll data-scroll-sticky data-scroll-target={'#layout-container'} className={'relative z-20'}>
@@ -369,24 +371,17 @@ function PortfolioCarousel() {
             }}
         >
             <div
-                data-scroll
-                data-scroll-repeat
-                data-scroll-direction={'horizontal'}
-                data-scroll-speed={'2'}
+                // data-scroll
+                // data-scroll-repeat
+                // data-scroll-direction={'horizontal'}
+                // data-scroll-speed={'2'}
                 className="absolute left-0 right-0 bottom-0 top-0 whitespace-nowrap flex items-center justify-center z-10"
             >
-                <p
-                    className={'font-light'}
-                    style={{
-                        fontSize: '8vw',
-                        color: '#eae6dc',
-                        paddingTop: '6vh',
-                        width: '100%',
-                        'word-spacing': '10vw',
-                    }}
-                >
-                    COMMERCIAL INTERIORS
-                </p>
+
+              <Marquee>
+                COMMERCIAL INTERIORS
+              </Marquee>
+
             </div>
 
             <div
@@ -445,12 +440,12 @@ const IndexPage = () => (
         {/*</div>*/}
 
         <div id={'layout-container'} className={'relative z-10'}>
-            <Promo>
-                <Navigation />
-            </Promo>
+            {/*<Promo>*/}
+            {/*    <Navigation />*/}
+            {/*</Promo>*/}
 
-            <ResidentialSection />
-            <PortfolioCarousel />
+            {/*<PortfolioCarousel />*/}
+            {/*<ResidentialSection />*/}
 
             <Contact />
         </div>

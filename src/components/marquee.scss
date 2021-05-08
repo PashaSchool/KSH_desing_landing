@@ -1,0 +1,42 @@
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  //max-width: fit-content;
+  //width: max-content;
+  //width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // animation: scroll var(--duration) linear var(--delay) infinite;
+  animation: scroll 10s linear 0ms infinite;
+  animation-play-state: running;
+  //animation-delay: 0;
+  animation-direction: normal;
+
+  &:first-child {
+    //background-color: lightblue;
+  }
+
+  &:last-child {
+    //background-color: orangered;
+  }
+
+}

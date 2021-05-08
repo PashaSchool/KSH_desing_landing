@@ -13,7 +13,7 @@ const Scroll = callbacks => {
       ...scroll.options,
     })
     locomotiveScroll.update()
-    locomotiveScroll.stop()
+    // locomotiveScroll.stop()
 // console.dir({locomotiveScroll})
     // Exposing to the global scope for ease of use.
     window.scroll = locomotiveScroll
